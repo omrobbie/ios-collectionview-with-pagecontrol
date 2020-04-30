@@ -36,7 +36,7 @@ class CollectionViewWithPageControl: UIViewController {
     fileprivate func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(ControlCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(UINib(nibName: "ControlCell", bundle: nil), forCellWithReuseIdentifier: cellId)
         pageControl.numberOfPages = itemCount
     }
 }
@@ -53,14 +53,7 @@ extension CollectionViewWithPageControl: UICollectionViewDelegate, UICollectionV
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ControlCell
-        switch indexPath.row {
-        case 0: cell.backgroundColor = .systemRed
-        case 1: cell.backgroundColor = .systemBlue
-        case 2: cell.backgroundColor = .systemOrange
-        case 3: cell.backgroundColor = .systemGreen
-        default:
-            cell.backgroundColor = .black
-        }
+        cell.lblTitle.text = "Item \(indexPath.row)"
         return cell
     }
 

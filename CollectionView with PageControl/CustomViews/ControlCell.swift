@@ -10,4 +10,5 @@ import UIKit
 
 class ControlCell: UICollectionViewCell {
 
+    @IBOutlet weak var lblTitle: UILabel!
 }
