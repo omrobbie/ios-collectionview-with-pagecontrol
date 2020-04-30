@@ -16,6 +16,7 @@ class CollectionViewWithPageControl: UIViewController {
     @IBOutlet fileprivate weak var pageControl: UIPageControl!
 
     fileprivate let cellId = "CollectionViewWithPageControl"
+    fileprivate let itemCount = 4
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,7 @@ class CollectionViewWithPageControl: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(ControlCell.self, forCellWithReuseIdentifier: cellId)
+        pageControl.numberOfPages = itemCount
     }
 }
 
@@ -46,7 +48,7 @@ extension CollectionViewWithPageControl: UICollectionViewDelegate, UICollectionV
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return itemCount
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -60,5 +62,11 @@ extension CollectionViewWithPageControl: UICollectionViewDelegate, UICollectionV
             cell.backgroundColor = .black
         }
         return cell
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let point = scrollView.contentOffset.x
+        let cellWidth = UIScreen.main.bounds.width
+        pageControl.currentPage = Int(point / cellWidth)
     }
 }
