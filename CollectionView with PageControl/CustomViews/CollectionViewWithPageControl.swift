@@ -8,15 +8,22 @@
 
 import UIKit
 
+protocol CollectionViewWithPageControlDelegate {
+
+    func cellForItemAt(cell: UICollectionViewCell, indexPath: IndexPath)
+    func didSelectItemAt(indexPath: IndexPath)
+}
+
 class CollectionViewWithPageControl: UIViewController {
 
     @IBOutlet fileprivate weak var constraintHeight: NSLayoutConstraint!
-
     @IBOutlet fileprivate weak var collectionView: UICollectionView!
     @IBOutlet fileprivate weak var pageControl: UIPageControl!
 
-    fileprivate let cellId = "CollectionViewWithPageControl"
-    fileprivate let itemCount = 4
+    var delegate: CollectionViewWithPageControlDelegate?
+
+    var cellName = ""
+    var itemCount = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +40,16 @@ class CollectionViewWithPageControl: UIViewController {
         view.leftAnchor.constraint(equalTo: onView.leftAnchor).isActive = true
     }
 
+    func numberOfPage(_ count: Int) {
+        itemCount = count
+        pageControl.numberOfPages = count
+        collectionView.reloadData()
+    }
+
     fileprivate func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "ControlCell", bundle: nil), forCellWithReuseIdentifier: cellId)
-        pageControl.numberOfPages = itemCount
+        collectionView.register(UINib(nibName: cellName, bundle: nil), forCellWithReuseIdentifier: cellName)
     }
 }
 
@@ -52,9 +64,13 @@ extension CollectionViewWithPageControl: UICollectionViewDelegate, UICollectionV
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ControlCell
-        cell.lblTitle.text = "Item \(indexPath.row)"
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath)
+        delegate?.cellForItemAt(cell: cell, indexPath: indexPath)
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelectItemAt(indexPath: indexPath)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

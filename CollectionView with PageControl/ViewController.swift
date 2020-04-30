@@ -12,7 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var controlView: UIView!
 
-    let collectionPage = CollectionViewWithPageControl()
+    fileprivate let collectionPage = CollectionViewWithPageControl()
+    fileprivate let data = ["One", "Two", "Three"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,21 @@ class ViewController: UIViewController {
     }
 
     fileprivate func setupCollectionViewWithPageControl() {
+        collectionPage.delegate = self
+        collectionPage.cellName = "ControlCell"
         collectionPage.showView(controlView)
+        collectionPage.numberOfPage(data.count)
+    }
+}
+
+extension ViewController: CollectionViewWithPageControlDelegate {
+
+    func cellForItemAt(cell: UICollectionViewCell, indexPath: IndexPath) {
+        let myCell = cell as! ControlCell
+        myCell.lblTitle.text = data[indexPath.row]
+    }
+
+    func didSelectItemAt(indexPath: IndexPath) {
+        print("Item \(indexPath.row) selected!")
     }
 }
