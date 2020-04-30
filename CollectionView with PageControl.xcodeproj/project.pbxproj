@@ -17,6 +17,8 @@
 		FC06F080245A94CC001034BE /* CollectionViewWithPageControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC06F07E245A94CC001034BE /* CollectionViewWithPageControl.xib */; };
 		FC06F088245AC512001034BE /* ControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC06F086245AC512001034BE /* ControlCell.swift */; };
 		FC06F089245AC512001034BE /* ControlCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC06F087245AC512001034BE /* ControlCell.xib */; };
+		FC06F08C245AD0B3001034BE /* ControlCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC06F08A245AD0B3001034BE /* ControlCell2.swift */; };
+		FC06F08D245AD0B3001034BE /* ControlCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC06F08B245AD0B3001034BE /* ControlCell2.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		FC06F07E245A94CC001034BE /* CollectionViewWithPageControl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewWithPageControl.xib; sourceTree = "<group>"; };
 		FC06F086245AC512001034BE /* ControlCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlCell.swift; sourceTree = "<group>"; };
 		FC06F087245AC512001034BE /* ControlCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ControlCell.xib; sourceTree = "<group>"; };
+		FC06F08A245AD0B3001034BE /* ControlCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlCell2.swift; sourceTree = "<group>"; };
+		FC06F08B245AD0B3001034BE /* ControlCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ControlCell2.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				FC06F06D245A933D001034BE /* ViewController.swift */,
 				FC06F086245AC512001034BE /* ControlCell.swift */,
 				FC06F087245AC512001034BE /* ControlCell.xib */,
+				FC06F08A245AD0B3001034BE /* ControlCell2.swift */,
+				FC06F08B245AD0B3001034BE /* ControlCell2.xib */,
 				FC06F06F245A933D001034BE /* Main.storyboard */,
 				FC06F072245A933E001034BE /* Assets.xcassets */,
 				FC06F074245A933E001034BE /* LaunchScreen.storyboard */,
@@ -145,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC06F08D245AD0B3001034BE /* ControlCell2.xib in Resources */,
 				FC06F076245A933E001034BE /* LaunchScreen.storyboard in Resources */,
 				FC06F080245A94CC001034BE /* CollectionViewWithPageControl.xib in Resources */,
 				FC06F073245A933E001034BE /* Assets.xcassets in Resources */,
@@ -164,6 +171,7 @@
 				FC06F06E245A933D001034BE /* ViewController.swift in Sources */,
 				FC06F06A245A933D001034BE /* AppDelegate.swift in Sources */,
 				FC06F06C245A933D001034BE /* SceneDelegate.swift in Sources */,
+				FC06F08C245AD0B3001034BE /* ControlCell2.swift in Sources */,
 				FC06F07F245A94CC001034BE /* CollectionViewWithPageControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

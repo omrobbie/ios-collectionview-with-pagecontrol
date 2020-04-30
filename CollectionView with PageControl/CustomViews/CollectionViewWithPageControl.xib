@@ -33,17 +33,16 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="LGQ-PY-9cF">
-                    <rect key="frame" x="187.66666666666666" y="200" width="39" height="37"/>
+                <pageControl opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="LGQ-PY-9cF">
+                    <rect key="frame" x="187.66666666666666" y="163" width="39" height="37"/>
                     <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="currentPageIndicatorTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </pageControl>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="LGQ-PY-9cF" firstAttribute="centerX" secondItem="r2w-sp-4mG" secondAttribute="centerX" id="G5r-AZ-1a2"/>
                 <constraint firstItem="r2w-sp-4mG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="djz-z3-4HL"/>
-                <constraint firstItem="LGQ-PY-9cF" firstAttribute="top" secondItem="r2w-sp-4mG" secondAttribute="bottom" id="ind-oh-azM"/>
+                <constraint firstItem="LGQ-PY-9cF" firstAttribute="top" secondItem="r2w-sp-4mG" secondAttribute="bottom" constant="-37" id="ind-oh-azM"/>
                 <constraint firstItem="r2w-sp-4mG" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="jPm-Lh-mAi"/>
                 <constraint firstItem="r2w-sp-4mG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yDE-bp-C3b"/>
             </constraints>

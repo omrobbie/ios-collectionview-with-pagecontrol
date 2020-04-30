@@ -10,14 +10,14 @@ import UIKit
 
 protocol CollectionViewWithPageControlDelegate {
 
-    func cellForItemAt(cell: UICollectionViewCell, indexPath: IndexPath)
-    func didSelectItemAt(indexPath: IndexPath)
+    func cellForItemAt(collectionView: UICollectionView, cell: UICollectionViewCell, indexPath: IndexPath)
+    func didSelectItemAt(collectionView: UICollectionView, indexPath: IndexPath)
 }
 
 class CollectionViewWithPageControl: UIViewController {
 
     @IBOutlet fileprivate weak var constraintHeight: NSLayoutConstraint!
-    @IBOutlet fileprivate weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet fileprivate weak var pageControl: UIPageControl!
 
     var delegate: CollectionViewWithPageControlDelegate?
@@ -65,12 +65,12 @@ extension CollectionViewWithPageControl: UICollectionViewDelegate, UICollectionV
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath)
-        delegate?.cellForItemAt(cell: cell, indexPath: indexPath)
+        delegate?.cellForItemAt(collectionView: collectionView, cell: cell, indexPath: indexPath)
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.didSelectItemAt(indexPath: indexPath)
+        delegate?.didSelectItemAt(collectionView: collectionView, indexPath: indexPath)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

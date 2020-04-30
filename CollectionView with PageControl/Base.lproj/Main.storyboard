@@ -32,12 +32,22 @@
                                     <constraint firstAttribute="height" constant="200" id="jhk-1U-ImT"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLr-FD-KW7">
+                                <rect key="frame" x="0.0" y="364" width="414" height="100"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="RQE-lT-CYc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="hLr-FD-KW7" firstAttribute="top" secondItem="O8G-vS-IS4" secondAttribute="bottom" constant="20" id="1WL-Qt-LJG"/>
                             <constraint firstItem="O8G-vS-IS4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8hj-UD-bBy"/>
                             <constraint firstItem="O8G-vS-IS4" firstAttribute="top" secondItem="1lv-C2-IY2" secondAttribute="bottom" id="AsU-U4-I85"/>
+                            <constraint firstItem="hLr-FD-KW7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CTg-YN-TEw"/>
                             <constraint firstItem="O8G-vS-IS4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="b3V-l3-8TK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hLr-FD-KW7" secondAttribute="trailing" id="eAu-c4-70P"/>
                             <constraint firstItem="1lv-C2-IY2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o1V-J3-WfK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1lv-C2-IY2" secondAttribute="trailing" id="pph-FU-4Or"/>
                             <constraint firstItem="1lv-C2-IY2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yMI-eU-UTt"/>
@@ -46,6 +56,7 @@
                     </view>
                     <connections>
                         <outlet property="controlView" destination="O8G-vS-IS4" id="Kqv-vi-rdg"/>
+                        <outlet property="controlView2" destination="hLr-FD-KW7" id="auU-2y-g4Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
