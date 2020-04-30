@@ -9,6 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CollectionViewWithPageControl" customModule="CollectionView_with_PageControl" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="r2w-sp-4mG" id="O07-tD-qVf"/>
+                <outlet property="constraintHeight" destination="mXo-V9-HfX" id="Dww-2o-gKg"/>
+                <outlet property="pageControl" destination="LGQ-PY-9cF" id="IpB-Bh-NlF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
