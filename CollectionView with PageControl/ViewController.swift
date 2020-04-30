@@ -10,7 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var controlView: UIView!
+
+    let collectionPage = CollectionViewWithPageControl()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCollectionViewWithPageControl()
+    }
+
+    fileprivate func setupCollectionViewWithPageControl() {
+        collectionPage.showView(controlView)
     }
 }
