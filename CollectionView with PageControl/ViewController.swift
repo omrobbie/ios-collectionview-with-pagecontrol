@@ -8,6 +8,12 @@
 
 import UIKit
 
+struct Data2 {
+
+    let image: String
+    let name: String
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var controlView: UIView!
@@ -17,7 +23,12 @@ class ViewController: UIViewController {
     fileprivate let data = ["One", "Two", "Three"]
 
     fileprivate let collectionPage2 = CollectionViewWithPageControl()
-    fileprivate let data2 = ["Bike", "Motorcycle", "Car", "Bus", "Truck"]
+    fileprivate let data2: [Data2] = [
+        Data2(image: "pencil", name: "Pencil"),
+        Data2(image: "trash", name: "Trash"),
+        Data2(image: "paperplane.fill", name: "Paper Plane"),
+        Data2(image: "folder", name: "Folder"),
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +60,9 @@ extension ViewController: CollectionViewWithPageControlDelegate {
             myCell.lblTitle.text = data[indexPath.row]
         case collectionPage2.collectionView:
             let myCell = cell as! ControlCell2
-            myCell.lblName.text = data2[indexPath.row]
+            let item = data2[indexPath.row]
+            myCell.imgItem.image = UIImage(systemName: item.image)
+            myCell.lblName.text = item.name
         default: break
         }
     }
@@ -57,7 +70,7 @@ extension ViewController: CollectionViewWithPageControlDelegate {
     func didSelectItemAt(collectionView: UICollectionView, indexPath: IndexPath) {
         switch collectionView {
         case collectionPage.collectionView: print("Item \(data[indexPath.row]) selected!")
-        case collectionPage2.collectionView: print("Item \(data2[indexPath.row]) selected!")
+        case collectionPage2.collectionView: print("Item \(data2[indexPath.row].name) selected!")
         default: break
         }
     }
